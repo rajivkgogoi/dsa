@@ -1,15 +1,16 @@
-﻿namespace DSAlgo.DataStructures.LinkedList
+﻿namespace DSAlgo.DataStructures.LinkedList.DLL
 {
-    internal class Node<T>
+    public class Node<T>
     {
         public T data;
         public Node<T> next;
+        public Node<T> prev;
     }
 
-    internal class SimplyLinkedList<T>
+    public class DoublyLinkedList<T>
     {
-        private Node<T> head = null;
-        private Node<T> tail = null;
+        Node<T> head;
+        Node<T> tail;
 
         public void AddToLast(T data)
         {
@@ -18,12 +19,14 @@
 
             if(head == null)
             {
-                head = tail = newNode;
+                head = newNode;
+                tail = newNode;
             }
             else
             {
                 tail.next = newNode;
-                tail = tail.next;
+                newNode.prev = tail;
+                tail = newNode;
             }
         }
 
@@ -32,31 +35,26 @@
             Node<T> newNode = new Node<T>();
             newNode.data = data;
 
-            if (head == null)
+            if(head == null)
             {
-                head = tail = newNode;
+                head = newNode;
+                tail = newNode;
             }
             else
             {
                 newNode.next = head;
+                head.prev = newNode;
                 head = newNode;
             }
-
         }
 
         public void ReadAllNodes()
         {
-            Node<T> current = head;
-            if(current == null)
-            {
-                Console.WriteLine("LinkedList is empty.");
-                return;
-            }
-            
+            var current = head;
+
             while(current.next != null)
             {
                 Console.WriteLine(current.data);
-
                 current = current.next;
             }
             Console.WriteLine(current.data);

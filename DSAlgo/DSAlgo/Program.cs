@@ -1,4 +1,5 @@
 ﻿using DSAlgo.DataStructures.LinkedList;
+using DSAlgo.DataStructures.LinkedList.DLL;
 using System;
 
 namespace MyApp // Note: actual namespace depends on the project name.
@@ -10,7 +11,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
             Console.WriteLine("Hello World!");
 
             //LinkedList
-            SimplyLinkedList<int> sll = new SimplyLinkedList<int>();
+            DoublyLinkedList<int> sll = new DoublyLinkedList<int>();
             sll.AddToLast(1);
             sll.AddToLast(2);
             sll.AddToLast(3);
