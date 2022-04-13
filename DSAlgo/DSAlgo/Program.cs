@@ -1,5 +1,8 @@
-﻿using DSAlgo.DataStructures.LinkedList;
+﻿using DSAlgo.DataStructures.Algorithms;
+using DSAlgo.DataStructures.LinkedList;
 using DSAlgo.DataStructures.LinkedList.DLL;
+using DSAlgo.DataStructures.Search;
+using DSAlgo.Sorting;
 using System;
 
 namespace MyApp // Note: actual namespace depends on the project name.
@@ -10,16 +13,19 @@ namespace MyApp // Note: actual namespace depends on the project name.
         {
             Console.WriteLine("Hello World!");
 
-            //LinkedList
-            DoublyLinkedList<int> sll = new DoublyLinkedList<int>();
-            sll.AddToLast(1);
-            sll.AddToLast(2);
-            sll.AddToLast(3);
-            sll.AddToLast(4);
-            sll.AddToLast(5);
-            sll.AddToFirst(0);
+            //Binary Search
+            /*int[] sortedArray = { 10, 11, 22, 30, 40, 55 };
+            BinarySearch bs = new BinarySearch();
 
-            sll.ReadAllNodes();
+            Console.WriteLine(bs.Search(sortedArray, 30));
+            Console.WriteLine(bs.Search(sortedArray, 11));
+            Console.WriteLine(bs.Search(sortedArray, 111));*/
+            //Misc misc = new Misc();
+            //misc.PrintGrid(16);
+
+            int[] unsortedArray = { 11, 2, 33, 4, 55, 9, 21 };
+            SelectionSort ss = new SelectionSort();
+            ss.SortAscending(unsortedArray);
 
             Console.ReadLine();
         }
